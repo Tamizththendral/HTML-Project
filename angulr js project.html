@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="quoteApp">
+<head>
+  <meta charset="UTF-8">
+  <title>InspireMe - Quotes App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+}
+
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff8f0;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff6f61;
+    }
+
+    .quote-box {
+      padding: 25px;
+      border-radius: 10px;
+      background: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .quote {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .author {
+      font-style: italic;
+      color: #888;
+    }
+
+    .btn, select {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .btn {
+      background-color: #ff6f61;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: #ff3e2f;
+    }
+
+    .favorite-btn {
+      background-color: #ffc107;
+      color: #333;
+    }
+
+    .fav-list {
+      margin-top: 20px;
+    }
+
+    .fav-item {
+      background: #fff;
+      padding: 15px;
+      border-left: 5px solid #ff6f61;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .btn, select {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body ng-controller="QuoteController">
+
+  <div class="container">
+    <h1>🌸 InspireMe Quotes</h1>
+
+    <div class="quote-box">
+      <div class="quote">"{{currentQuote.text}}"</div>
+      <div class="author">- {{currentQuote.author}}</div>
+
+      <div style="margin-top: 15px;">
+        <select ng-model="selectedCategory" ng-options="cat for cat in categories" ng-change="filterByCategory()"></select>
+        <button class="btn" ng-click="nextQuote()">Next</button>
+        <button class="btn" ng-click="randomQuote()">Random</button>
+        <button class="btn favorite-btn" ng-click="addToFavorites(currentQuote)">❤️ Save</button>
+      </div>
+    </div>
+
+    <div class="fav-list" ng-if="favorites.length > 0">
+      <h2>⭐ Favorite Quotes</h2>
+      <div class="fav-item" ng-repeat="fav in favorites">
+        "{{fav.text}}" <br> — <em>{{fav.author}}</em>
+      </div>
+      <button class="btn" ng-click="clearFavorites()">Clear Favorites</button>
+    </div>
+  </div>
+
+  <script>
+    angular.module('quoteApp', [])
+      .controller('QuoteController', function($scope) {
+        $scope.categories = ["All", "Motivation", "Success", "Life", "Wisdom"];
+        $scope.selectedCategory = "All";
+        $scope.favorites = [];
+
+        const allQuotes = [
+          { text: "Push yourself, because no one else will.", author: "Unknown", category: "Motivation" },
+          { text: "Dream it. Wish it. Do it.", author: "Unknown", category: "Motivation" },
+          { text: "Don't stop when you're tired. Stop when you're done.", author: "Unknown", category: "Motivation" },
+          { text: "Success doesn’t just find you. You have to go out and get it.", author: "Unknown", category: "Success" },
+          { text: "Believe you can and you're halfway there.", author: "Roosevelt", category: "Success" },
+          { text: "It always seems impossible until it’s done.", author: "Mandela", category: "Success" },
+          { text: "Life is what happens when you're making other plans.", author: "Lennon", category: "Life" },
+          { text: "In the middle of every difficulty lies opportunity.", author: "Einstein", category: "Life" },
+          { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle", category: "Wisdom" },
+          { text: "Turn your wounds into wisdom.", author: "Oprah", category: "Wisdom" }
+        ];
+
+        $scope.filteredQuotes = [...allQuotes];
+        $scope.currentIndex = 0;
+        $scope.currentQuote = $scope.filteredQuotes[0];
+
+        $scope.filterByCategory = function() {
+          if ($scope.selectedCategory === "All") {
+            $scope.filteredQuotes = [...allQuotes];
+          } else {
+            $scope.filteredQuotes = allQuotes.filter(q => q.category === $scope.selectedCategory);
+          }
+          $scope.currentIndex = 0;
+          $scope.currentQuote = $scope.filteredQuotes[0];
+        };
+
+        $scope.nextQuote = function() {
+          $scope.currentIndex = ($scope.currentIndex + 1) % $scope.filteredQuotes.length;
+          $scope.currentQuote = $scope.filteredQuotes[$scope.currentIndex];
+        };
+
+        $scope.randomQuote = function() {
+          const rand = Math.floor(Math.random() * $scope.filteredQuotes.length);
+          $scope.currentIndex = rand;
+          $scope.currentQuote = $scope.filteredQuotes[rand];
+        };
+
+        $scope.addToFavorites = function(quote) {
+          if (!$scope.favorites.some(q => q.text === quote.text)) {
+            $scope.favorites.push(quote);
+          }
+        };
+
+        $scope.clearFavorites = function() {
+          if (confirm("Clear all favorite quotes?")) {
+            $scope.favorites = [];
+          }
+        };
+      });
+  </script>
+
+</body>
+</html>
