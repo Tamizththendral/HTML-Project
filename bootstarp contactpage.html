@@ -1,0 +1,67 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <style>
+    .navbar{
+        background-color: rgb(73, 73, 73); height:50px; }
+    .navlink{
+        color:aliceblue;
+        text-decoration: none;
+        padding: 110px;
+    }
+    .navlink:hover{
+        color: rgb(136, 244, 124);
+    }
+  </style>
+  <body style="background-color: rgb(243, 243, 243); margin-left: 100px; margin-right: 100px;">
+    <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; margin-bottom: 20px; margin-top: 20px;">Contact Form</h2>
+    <nav class="navbar mt-3 text-dark">
+      <li class="nav-item">
+          <a class="navlink" href="C:\Users\tamiz\Desktop\htmlbasic\bootstrap project 1 homepage.html" >Home</a>
+        </li>
+      <li class="navitem">
+          <a class="navlink" href="C:\Users\tamiz\Desktop\htmlbasic\bootstrap gallarypage.html    ">Gallery</a>
+      </li>
+      <li class="navitem">
+          <a class="navlink col-md-4" href="C:\Users\tamiz\Desktop\htmlbasic\bootstrap learnpage.html">Learn with us</a>
+      </li>
+      <li class="navitem">
+          <a class="navlink" href="C:\Users\tamiz\Desktop\htmlbasic\bootstarp contactpage.html">contact</a>
+      </li>
+  </nav>
+  <p class="text-center mb-4 mt-4">We’d love to hear from you! Please fill out the form below to send us a message.</p>
+    <form>
+      <div class="form-inline d-flex justify-content-center ">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" class="form-control col-md-3 " id="name" placeholder="Enter your name" required style="margin-left: 43px;">
+      </div>
+      <div class="form-inline d-flex justify-content-center mt-3">
+        <label for="email">Enter Your Email:</label>
+        <input type="email" class="form-control col-md-3 " id="email" placeholder="Enter your email" required style="margin-left: 44px;">
+      </div>
+      <div class="form-inline d-flex justify-content-center mt-3">
+        <label for="mobile">Enter Your Mobile no:</label>
+        <input type="number" class="form-control col-md-3" id="mobile" placeholder="Enter your mobile number" required style="margin-left: 10px;">
+      </div>
+      <div class="form-inline d-flex justify-content-center mt-3">
+        <label for="subject">Enter the Subject: </label>
+        <input type="text" class="form-control col-md-3" id="subject" placeholder="Enter the Subject" required style="margin-left: 37px;">
+      </div>
+      <div class="form-inline d-flex justify-content-center mt-3">
+        <label for="message">Enter the Message: </label>
+        <input type="text" class="form-control col-md-3" id="message" rows="4" placeholder="Enter the message" required style="margin-left: 26px;">
+      </div>
+      <button type="submit" onclick="alert('Your message has been submitted successfully!!!!!')" class="btn btn-success mt-3" style="margin-left: 660px;">Submit</button>
+      <button type="reset" class="btn btn-danger" style="margin-left: 750px; margin-top: -67px;">Reset</button>
+    </form>
+    <footer class="text-center text-light mt-3 mb-2" style="background-color: rgb(81, 81, 81);">
+      <p>&copy; 2025 Lenseek </p>
+      <small>follow us: Instagram | Facebook | Twitter</small>
+  </footer>
+  </body>
+  </html>
