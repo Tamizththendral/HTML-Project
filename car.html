@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        align-items: center;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(94, 9, 112);
+    }
+    .car{
+        height: 90px;
+        width: 200px;
+        border-radius: 20px;
+        background-color: rgb(255, 218, 86);
+        border: 8px;
+        border-color: rgb(255, 192, 20);
+        border-style: solid;
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        box-shadow: 0 10px 10px rgb(61, 61, 61);
+    }
+    .glass1{
+        position: absolute;
+        top: 44.9%;
+        left: 46.2%;
+        rotate: 270deg;
+        clip-path: polygon(10% 100%, 90% 100%, 80% 10%, 20% 10%);
+        background-color: black;
+        height: 35px;
+        width: 6.6%;
+        
+    }
+    .glass2{
+        position: absolute;
+        top: 44.9%;
+        left: 41.2%;
+        rotate: 90deg;
+        clip-path: polygon(10% 100%, 90% 100%, 80% 10%, 20% 10%);
+        background-color: black;
+        height: 35px;
+        width: 6.6%;
+        
+    }
+    .glass3{
+        position: absolute;
+        top: 51.2%;
+        left: 43%;
+        rotate: 180deg;
+        clip-path: polygon(5% 90%, 35% 80%, 85% 10%, 5% 10%);
+        background-color: black;
+        height: 14px;
+        width:4%;
+    }
+    .glass4{
+        position: absolute;
+        top: 51.2%;
+        left: 46.9%;
+        rotate: 180deg;
+        clip-path: polygon(95% 90%, 65% 80%, 15% 10%, 95% 10%);
+        background-color: black;
+        height: 14px;
+        width: 4%;   
+    }
+    .glass5{
+        position: absolute;
+        top: 41.4%;
+        left: 46.9%;
+        clip-path: polygon(5% 90%, 35% 80%, 85% 10%, 5% 10%);
+        background-color: black;
+        height: 14px;
+        width:4%;
+    }
+    .glass6{
+        position: absolute;
+        top: 41.4%;
+        left: 43%;
+        clip-path: polygon(95% 90%, 65% 80%, 15% 10%, 95% 10%);
+        background-color: black;
+        height: 14px;
+        width: 4%;   
+    }
+    .light1{
+        clip-path: polygon(-10% 50%, 100% 0%, 100% 100%, 0% 90%);
+        background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.673),rgba(255, 255, 255, 0.464));
+        width: 10%;
+        height: 20px;
+        position: absolute;
+        top: 42%;
+        left: 54%;
+        animation: a 0.5s infinite ease;
+    }
+    .light2{
+        clip-path: polygon(-10% 50%, 100% 0%, 100% 100%, 0% 90%);
+        background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.673),rgba(255, 255, 255, 0.464));
+        width: 10%;
+        height: 20px;
+        position: absolute;
+        top: 49%;
+        rotate: 360deg;
+        left: 54%;
+        animation: a 0.5s infinite ease;
+    }
+    @keyframes a{
+        0%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0.2;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .road{
+        background-color: grey;
+        height:200px;
+        width: 51%;
+        position: absolute;
+        top: 35%;
+        left: 25%;
+        z-index: -2;
+        box-shadow: 0px 5px 10px black;
+        animation: x 2s infinite ease; 
+    }
+
+    .z{
+        position: absolute;
+        top:30%;
+        font-size: 80px;
+        color: rgb(255, 255, 255);
+        animation: b 0.3s infinite ease;
+        z-index: -1;
+        
+    }
+    @keyframes b{
+        0%{
+            left: 35%;
+        }
+        50%{
+            left:30%;
+        }
+        100%{
+            left: 25%;
+        }
+    }
+    .sidemirror1 {
+            width: 8px;
+            height: 11px;
+            background: rgb(255, 219, 15);
+            position: absolute;
+            border-bottom-right-radius:40px ;
+            border-bottom-left-radius: 10px;
+            top: 54.5%;
+            left: 50.5% ;
+            
+        }
+        .sidemirror2 {
+            width: 8px;
+            height: 11px;
+            background: rgb(255, 219, 15);
+            position: absolute;
+            border-top-right-radius:40px ;
+            border-top-left-radius: 10px;
+            top: 38.5%;
+            left: 50.5% ;
+            
+        }
+        .star{
+            position: absolute;
+            top: -8%;
+            left: 25%;
+            font-size: 40px;
+            animation: stars 0.4s infinite ease-in-out alternate;
+        }
+        .star1{
+            position: absolute;
+            top: -7%;
+            left: 65%;
+            font-size: 50px;
+            animation: stars 0.4s infinite ease-in-out alternate;
+        }
+        .star2{
+            position: absolute;
+            top: 10%;
+            left: 80%;
+            font-size: 30px;
+            animation: stars 0.4s infinite ease-in-out alternate;
+        }
+        .star3{
+            position: absolute;
+            top: 7%;
+            left: 40%;
+            font-size: 20px;
+            animation: stars 0.4s infinite ease-in-out alternate;
+        }
+        .star4{
+            position: absolute;
+            top: 7%;
+            left: 5%;
+            font-size: 30px;
+            animation: stars 0.4s infinite ease-in-out alternate;
+        }
+        @keyframes stars {
+            0% {
+                color: pink;
+                opacity: 0.1;
+            }
+            100% {
+                color: aqua;
+                opacity: 1;
+            }
+}
+</style>
+<body>
+    <div class="a">
+    <div class="car">
+    </div> 
+    <div class="glass1">
+    </div>
+    <div class="glass2">
+    </div>
+    <div class="glass3">
+    </div>
+    <div class="glass4">
+    </div>
+    <div class="glass5">
+    </div>
+    <div class="glass6">
+    </div>
+    <div>
+        <h1 style="position: absolute;top: 35.5%;left: 53.6%; rotate: 90deg; font-size: 50px;color: white;">-</h1>
+        <h1 style="position: absolute;top: 42%;left: 53.6%; rotate: 90deg; font-size: 50px;color: white;">-</h1>
+        <h1 style="position: absolute;top: 35.5%;left: 40%; rotate: 90deg; font-size: 50px;color: red;">-</h1>
+        <h1 style="position: absolute;top: 42%;left: 40%; rotate: 90deg; font-size: 50px;color: red;">-</h1>
+    </div>
+    <div style="position: absolute;background-color: rgb(255, 255, 255);height: 15px;width: 2.4%; top: 46%; rotate: 90deg;left: 45.7%;">
+    </div>
+    <p style="position: absolute;top: 44.2%; left: 45.9%;rotate: 90deg;font-size: small;">TAXI</p>
+    <div class="light1"></div>
+    <div class="light2"></div>
+    </div>
+    <div class="road">
+    </div>
+    <div class="sidemirror1">
+    </div>
+    <div class="sidemirror2">
+    </div>
+    <p class="z">- - - - - - - - - - - - - -</p>
+    <div class="star">
+        <h1>⭐</h1>
+    </div>
+    <div class="star1">
+        <h1>⭐</h1>
+    </div>
+    <div class="star2">
+        <h1>⭐</h1>
+    </div>
+    <div class="star3">
+        <h1>⭐</h1>
+    </div>
+    <div class="star4">
+        <h1>⭐</h1>
+    </div>
+</body>
+</html>
