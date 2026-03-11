@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Game</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: rgb(89, 89, 89);
+      text-align: center;
+      background-size: cover;
+    }
+  
+    h1 {
+      color: #ffff29;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+  
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: -5px;
+    }
+  
+    .images img {
+      width: 150px;
+      cursor: pointer;
+      border: 5px solid transparent;
+      border-radius: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+  
+    .images img:hover {
+      transform: scale(1.1);
+      border-color: #ffff29;
+    }
+  
+    .images p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 22px;
+      text-transform: capitalize;
+      color: #ffff29;
+    }
+  
+    #result {
+      margin-top: -15px;
+      font-size: 26px;
+      color: #ffd278;
+      font-weight: bold;
+    }
+  
+    .result-images img {
+      width: 120px;
+      border-radius: 10px;
+    }
+  
+    .vs {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffff29;
+    }
+  
+    #resetBtn {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 20px;
+      border: 3px solid #ffff29;
+      background-color: rgb(2, 3, 26);
+      color: #fcce00;
+      border-radius: 10px;
+      cursor: pointer;
+      display: none;
+    }
+  
+    #resetBtn:hover {
+      background-color: #ffff29;
+      color: #02031a;
+    }
+  
+    p[style] {
+      font-size: 22px;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <p style="color: #ffff29; font-weight: 700; margin-top: -10px;">Click an image to play. First to 2 wins!</p>
+
+  <div class="images">
+    <div>
+      <img src="https://tse4.mm.bing.net/th/id/OIP._g6CNrSZRpleevjgKXbiQwAAAA?pid=Api&P=0&h=220" alt="Rock" onclick="play('rock')">
+      <p>Rock</p>
+    </div>
+    <div>
+      <img src="https://tse3.mm.bing.net/th/id/OIP.FcTXkLxB9Gbz4hDThAyEnQAAAA?pid=Api&P=0&h=220" alt="Paper" onclick="play('paper')">
+      <p>Paper</p>
+    </div>
+    <div>
+      <img src="https://tse2.mm.bing.net/th/id/OIP.WHZ4OatADODSo8fq3-ThBQAAAA?pid=Api&P=0&h=220" alt="Scissors" onclick="play('scissors')">
+      <p>Scissors</p>
+    </div>
+  </div>
+
+  <div id="result"></div>
+  <button id="resetBtn" onclick="resetGame()">Restart</button>
+
+  <script>
+    let userScore = 0;
+    let computerScore = 0;
+
+    const images = {
+      rock: "https://tse4.mm.bing.net/th/id/OIP._g6CNrSZRpleevjgKXbiQwAAAA?pid=Api&P=0&h=220",
+      paper: "https://tse3.mm.bing.net/th/id/OIP.FcTXkLxB9Gbz4hDThAyEnQAAAA?pid=Api&P=0&h=220",
+      scissors: "https://tse2.mm.bing.net/th/id/OIP.WHZ4OatADODSo8fq3-ThBQAAAA?pid=Api&P=0&h=220"
+    };
+
+    function play(userChoice) {
+      const choices = ["rock", "paper", "scissors"];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+      let resultText = "";
+
+      if (userChoice === computerChoice) {
+        resultText = `It's a draw!`;
+      } else if (
+        (userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "paper" && computerChoice === "rock") ||
+        (userChoice === "scissors" && computerChoice === "paper")
+      ) {
+        userScore++;
+        resultText = `You win this round!`;
+      } else {
+        computerScore++;
+        resultText = `Computer wins this round!`;
+      }
+
+      let fullResult = `
+  <div class="result-images" style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+    <div style="text-align: center;">
+      <strong>You</strong><br>
+      <img src="${images[userChoice]}" >
+    </div>
+    <div class="vs">VS</div>
+    <div style="text-align: center;">
+      <strong>Computer</strong><br>
+      <img src="${images[computerChoice]}">
+    </div>
+  </div>
+  <br>
+  ${resultText}<br>
+  Score: You ${userScore} - ${computerScore} Computer
+`;
+
+
+      if (userScore === 2 || computerScore === 2) {
+        if (userScore === 2) {
+          fullResult += "<br><strong><i> You won the game!</i></strong>";
+        } else {
+          fullResult += "<br><i><strong> Computer won the game!</strong></i>";
+        }
+
+        document.getElementById("resetBtn").style.display = "inline-block";
+      }
+
+      document.getElementById("result").innerHTML = fullResult;
+    }
+
+    function resetGame() {
+      userScore = 0;
+      computerScore = 0;
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("resetBtn").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
