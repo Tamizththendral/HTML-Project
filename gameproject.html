@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: url(game1bg.webp);background-size: cover;">
+    <style>
+        .a{
+            margin: auto;
+            background-color: rgb(211, 50, 192);
+            color: black;
+            display: flex;
+            gap: 3%;
+            margin-top: 0%;
+            height: 70px;
+            position: fixed;
+            top: 0%;
+            width: 99%;
+            left: 0.5%;
+            z-index: 3;
+        }
+        .sidebar{
+            width: 15%;
+            height: 650px;
+            background-color: black;
+            color: white;
+            position:fixed;
+            top: 10.6%;
+            left: -250px;
+            transition: all 0.5s ease;
+            border-radius: 3%;
+            z-index: 5;
+        }
+        #sidebar:target{
+            left: 0%;
+            top: 9.5%;
+        }
+        .b{
+            width:3.4%;
+            height: 660px;
+            color: white;
+            background-color: rgb(79, 2, 70);
+            position:fixed;
+            top: 9.5%;
+            left: 0.5%;
+
+        }
+        .c{
+            margin-top: 70px;
+            background-color: black;
+            height: 300px;
+        }
+        .c img{
+            width: 30%;
+            position: absolute;
+            left: 37.5%;
+            top: 10%;
+        }
+        .d{
+            position: absolute;
+            top: 41%;
+            left: 22%;
+            color: white;
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            width: 17%;
+            height: 45px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 30px;
+            text-align: center;
+            line-height: 45px;
+            transition: all 0.5s ease;
+        }
+        .d:hover{
+            transform: scale(1.1);
+            background: linear-gradient(45deg, rgb(25, 160, 25), #7fff7f );
+        }
+        .e{
+            background-color: beige;
+            height: 450px;
+            background: url(bggame.jpg);
+            background-size: cover;
+        } 
+        .e img , .j img , .h img{
+            transition: all 0.3s ease;
+        }
+        .g{
+            background-color: rgb(187, 232, 255);
+            height: 50px;
+        }
+        .f{
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            border-radius: 10px;
+            height: 30px;
+            width: 8%;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .f:hover{
+            transform: scale(1.1);
+            background: linear-gradient(45deg, rgb(25, 160, 25), #7fff7f );
+        }.h{
+            background: url(bgg3.png);
+            background-size: cover;
+            height: 450px;
+        }
+        .i{
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            border-radius: 10px;
+            height: 30px;
+            width: 8%;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .i:hover{
+            transform: scale(1.1);
+            background: linear-gradient(45deg, rgb(25, 160, 25), #7fff7f );
+        }
+        .j{
+            background: url(bggame2.jpg);
+            background-size: cover;
+            height: 450px;
+        }
+        .k{
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            border-radius: 10px;
+            height: 30px;
+            width: 8%;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .k:hover{
+            transform: scale(1.1);
+            background: linear-gradient(45deg, rgb(25, 160, 25), #7fff7f );
+        }
+        .l{
+            background: url(moonbg.jpg);
+            background-size: cover;
+            height: 450px;
+        }
+        .m{
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            border-radius: 10px;
+            height: 30px;
+            width: 8%;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .e img:hover{
+           transform: rotate(360deg);
+           border-color: pink;
+        }
+        .h img:hover{
+           transform: rotate(360deg);
+           border-color: pink;
+        }
+        .j img:hover{
+           transform: rotate(360deg);
+           border-color: pink;
+        }
+        .n{
+            background: linear-gradient(45deg, #7fff7f, rgb(0, 190, 0));
+            border-radius: 10px;
+            height: 30px;
+            width: 10%;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .n:hover{
+            transform: scale(1.1);
+            background: linear-gradient(45deg, rgb(25, 160, 25), #7fff7f );
+        }
+    </style>
+    <div class="a">
+        
+       <h2 style="margin-left: 20%;">🕹️20+ Games</h2>
+       <h2>🚀No install Needed</h2>
+       <h2>💻On Any Device</h2>
+       <h2>🙌Play With Friends</h2>
+       <h2>✨All For Free</h2>
+    </div>
+    <div class="b">
+        <a href="#sidebar" class="z" style="font-size: larger; background-color: aqua;text-decoration: none;position: absolute;top: 2%;left: 2px; border-radius: 10px; border: 5%;border-color:rgb(255, 255, 255);border-style: solid;">Open</a>
+        <br><br><h1>🏠<br>⏱️<br>✨<br>🔥<br>🔄<br>👻<br>🃏<br>🧩<br>🎯<br>⚽<br>🔫<br>🎱<br>🗡️</h1>
+    </div>
+    <h1 style="font-size: 55px; color: black; position: fixed; top: -6%; left: 2%; z-index: 15;">🎮</h1>
+    <h1 style="font-size: 28px; color: black; position: fixed; top: -2%; left: 7%;z-index: 15;">Game<br>Zone</h1>
+    <div class="sidebar" id="sidebar">
+        <br>
+        <a href="#" class="y" style="font-size: 30px; background-color: aqua;text-decoration: none;position: absolute;top: 3%;left: 80px; border-radius: 10px; border: 5%;border-color:rgb(255, 255, 255);border-style: solid;">Close</a><br><br><br>
+        <a href="C:\Users\tamiz\Desktop\htmlbasic\game.html" style="font-size: 30px; color: white; text-decoration: none;">🏠 Home</a><h2>⏱️Recently Played</h2><h2>✨ New</h2><h2>🔥 Trending Now</h2><h2>🔄 Updated</h2><h2>👻 Horror</h2>
+        <h2>🃏 Card</h2><h2>🧩 Puzzle</h2><h2>🎯 Shooting</h2><h2>⚽ Soccer</h2><h2>🗡️ Action</h2>
+    </div>
+    <div class="c">
+        <img src="Subway-surfers-Logo.webp">
+        <a href="https://poki.com/en/g/subway-surfers" class="d">Start Playing Now</a>
+    </div>
+    <div class="g">
+        <h1 style="position: absolute;left: 45.3%;margin-top: 0%;">Casual Games</h1>
+    </div>
+    <div class="e">
+        <img src="templerum1.jpg" style="width: 300px; height: 390px; position: absolute; left: 17%;margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid;">
+        <img src="jetpackjoyride1.jpg" style="width: 300px; height: 390px; position: absolute; left: 42%; margin-top:1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="Screenshot 2025-03-22 122714.png" style="width: 300px; height: 390px; position: absolute; left: 67%; margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+    </div>
+    <div >
+        <a href="https://poki.com/en/g/temple-run-2"class="f" style="position: absolute; top: 106%;left: 23%;">Play Now</a>
+        <a href="https://poki.com/en/g/jetpack-joyride"class="f"  style="position: absolute; top: 106%;left: 48%;">Play Now</a>
+        <a href="https://poki.com/en/g/subway-surfers"class="f"  style="position: absolute; top: 106%;left: 74%;">Play Now</a>
+    </div>
+    <img src="sub1.jpg" style="position: absolute; width: 10%; top: 11%;left: 4%;border: 5%;border-color: aliceblue;border-style: solid;">
+    <img src="sub2.jpg" style="position: absolute; width: 15%; top: 33%;left: 4%;z-index: 1;border: 5%;border-color: aliceblue;border-style: solid;">
+    <img src="sub3.jpg" style="position: absolute; width: 22%; top: 11%;left: 15%;border: 5%;border-color: aliceblue;border-style: solid;">
+    <img src="sub4.jpg" style="position: absolute; width: 30%; top: 12%;left: 68%;border: 5%;border-color: aliceblue;border-style: solid;">
+    <div style="background-color:rgb(187, 232, 255);height: 50px;"><h1 style="position: absolute;left: 45.3%; margin-top: 0%;">Racing Games</h1></div>
+    <div class="h">
+        <img src="tunnelcar1.png" style="width: 300px; height: 390px; position: absolute; left: 17%;margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="cybercar.png" style="width: 300px; height: 390px; position: absolute; left: 42%; margin-top:1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="cardrifter.png" style="width: 300px; height: 390px; position: absolute; left: 67%; margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+    </div>
+    <div >
+        <a href="https://poki.com/en/g/super-tunnel-rush"class="i" style="position: absolute; top: 175%;left: 23%;">Play Now</a>
+        <a href="https://poki.com/en/g/blaze-drifter"class="i"  style="position: absolute; top: 175%;left: 48%;">Play Now</a>
+        <a href="https://poki.com/en/g/cyber-cars-punk-racing"class="i"  style="position: absolute; top: 175%;left: 74%;">Play Now</a>
+    </div>
+    <div style="background-color:rgb(187, 232, 255);height: 50px;"><h1 style="position: absolute;left: 45.7%; margin-top: 0%;">Puzzle Games</h1></div>
+    <div class="j">
+        <img src="tictactoe.png" style="width: 300px; height: 390px; position: absolute; left: 17%;margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="hangman.png" style="width: 300px; height: 390px; position: absolute; left: 42%; margin-top:1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="chess2.avif" style="width: 300px; height: 390px; position: absolute; left: 67%; margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+    </div>
+    <div >
+        <a href="https://poki.com/en/g/tic-tac-toe"class="k" style="position: absolute; top: 242%;left: 23%;">Play Now</a>
+        <a href="https://poki.com/en/g/hangman"class="k"  style="position: absolute; top: 242%;left: 48%;">Play Now</a>
+        <a href="https://poki.com/en/g/master-chess"class="k"  style="position: absolute; top:242%;left: 74%;">Play Now</a>
+    </div>
+    <div style="background-color:rgb(187, 232, 255);height: 50px;"><h1 style="position: absolute;left: 44.5%; margin-top: 0%;">Featured Games</h1></div>
+    <div class="l">
+        <img src="freefire'.jpg" style="width: 300px; height: 390px; position: absolute; left: 17%;margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="callofduty.jpg" style="width: 300px; height: 390px; position: absolute; left: 42%; margin-top:1.7%; border: 5%; border-color: gold; border-style: solid">
+        <img src="battlefield.png" style="width: 300px; height: 390px; position: absolute; left: 67%; margin-top: 1.7%; border: 5%; border-color: gold; border-style: solid">
+    </div>
+    <div >
+        <a href="#"class="n" style="position: absolute; top: 302%;left: 22%;">Purchase Now</a>
+        <a href="#"class="n"  style="position: absolute; top: 310%;left: 47%;">Purchase Now</a>
+        <a href="#" class="n"  style="position: absolute; top:310%;left: 73%;">Purchase Now</a>
+    </div>
+    <h1 style="position: absolute;transform: rotate(-30deg); color:rgb(255, 130, 47); top: 270%; left: 4%; font-family: cursive;">Limited Time</h1><h1 style="position: absolute;transform: rotate(-30deg); color:rgb(255, 137, 47); top: 275%; left: 8%;font-family: cursive;">Offer</h1>
+    <h2 style="position: absolute; top: 300%;color: rgb(255, 199, 127); left: 5%;">🔥 Get it now <br>for just $1000!🔥</h2>
+    <footer style="background-color: aliceblue; color: black; text-align: center; font-size: 20px;">
+        <a href="C:\Users\tamiz\Desktop\htmlbasic\game.html" style="margin-left: 3%;">Home</a>
+    </footer>
+</body>
+</html>
